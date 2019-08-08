@@ -82,7 +82,20 @@ public class RNTrackPlayerAudioPlayer: QueuedAudioPlayer {
     
     override func AVWrapper(failedWithError error: Error?) {
         super.AVWrapper(failedWithError: error)
-        self.reactEventEmitter.sendEvent(withName: "playback-error", body: ["error": error?.localizedDescription])
+        guard let e = error as? NSError else {
+            self.reactEventEmitter.sendEvent(withName: "playback-error", body: [
+                "error": error?.localizedDescription,
+                "message": error?.localizedDescription,
+                ])
+            return
+        }
+
+        self.reactEventEmitter.sendEvent(withName: "playback-error", body: [
+            "error": e.localizedDescription,
+            "code": e.code,
+            "message": e.localizedDescription,
+            "domain": e.domain,
+        ])
     }
     
     override func AVWrapperItemDidPlayToEndTime() {
