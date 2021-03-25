@@ -86,10 +86,10 @@ public class MusicService extends HeadlessJsTaskService {
         super.onCreate();
         Notification notification = Utils.createBlankSetupNotification(this);
         startForeground(1, notification);
+        
         manager = new MusicManager(this);
         handler = new Handler();
     }
-
 
     @Nullable
     @Override
@@ -123,6 +123,7 @@ public class MusicService extends HeadlessJsTaskService {
         super.onDestroy();
 
         destroy();
+        stopForeground(true);
     }
 
     @Override
