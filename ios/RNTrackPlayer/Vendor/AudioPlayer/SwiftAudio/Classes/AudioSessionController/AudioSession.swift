@@ -24,7 +24,7 @@ protocol AudioSession {
     @available(iOS 10.0, *)
     func setCategory(_ category: AVAudioSession.Category, mode: AVAudioSession.Mode, options: AVAudioSession.CategoryOptions) throws
     
-    @available(iOS 11.0, *)
+    @available(iOS 10, *)
     func setCategory(_ category: AVAudioSession.Category, mode: AVAudioSession.Mode, policy: AVAudioSession.RouteSharingPolicy, options: AVAudioSession.CategoryOptions) throws
     
     func setActive(_ active: Bool, options: AVAudioSession.SetActiveOptions) throws

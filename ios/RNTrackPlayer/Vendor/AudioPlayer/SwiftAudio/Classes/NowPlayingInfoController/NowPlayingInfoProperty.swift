@@ -116,7 +116,7 @@ public enum NowPlayingInfoProperty: NowPlayingInfoKeyValue {
      The service provider associated with the now-playing item.
      Value is a unique NSString that identifies the service provider for the now-playing item. If the now-playing item belongs to a channel or subscription service, this key can be used to coordinate various types of now-playing content from the service provider.
      */
-    @available(iOS 11.0, *)
+    @available(iOS 10, *)
     case serviceIdentifier(String?)
     
     
