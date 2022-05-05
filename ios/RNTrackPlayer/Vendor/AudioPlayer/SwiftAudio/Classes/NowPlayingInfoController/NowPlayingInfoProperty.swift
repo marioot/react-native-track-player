@@ -31,7 +31,7 @@ public enum NowPlayingInfoProperty: NowPlayingInfoKeyValue {
      The URL pointing to the now playing item's underlying asset.
      This constant is used by the system UI when video thumbnails or audio waveform visualizations are applicable.
      */
-    @available(iOS 10.3, *)
+    @available(iOS 10, *)
     case assetUrl(URL?)
     
     /**
